@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🔐 Encryption & Decryption Suite (Flask)</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🔐 Encryption & Decryption Suite</h1>
+  </header>
+
+  <main class="container">
+    <!-- Card: AES -->
+    <section class="card">
+      <header class="card-header" data-target="aes-content">AES Encryption</header>
+      <div id="aes-content" class="card-body collapsed">
+        <label>Text</label>
+        <textarea id="aes-input" placeholder="Enter text..."></textarea>
+        <label>Password</label>
+        <input id="aes-password" type="password" placeholder="Enter password..." />
+
+        <div class="actions">
+          <button data-action="aes-encrypt">🔒 Encrypt</button>
+          <button data-action="aes-decrypt">🔓 Decrypt</button>
+          <button data-action="aes-clear">Clear</button>
+        </div>
+
+        <label>Result</label>
+        <textarea id="aes-result" readonly></textarea>
+        <button class="copy-btn" data-copy="aes-result">Copy Result</button>
+      </div>
+    </section>
+
+    <!-- Card: RSA -->
+    <section class="card">
+      <header class="card-header" data-target="rsa-content">RSA Encryption</header>
+      <div id="rsa-content" class="card-body collapsed">
+        <div class="small-actions">
+          <button id="rsa-generate">Generate Key Pair</button>
+        </div>
+
+        <label>Public Key</label>
+        <textarea id="rsa-public-key" readonly></textarea>
+
+        <label>Private Key</label>
+        <textarea id="rsa-private-key" readonly></textarea>
+
+        <label>Text</label>
+        <textarea id="rsa-input" placeholder="Enter text..."></textarea>
+
+        <div class="actions">
+          <button data-action="rsa-encrypt">🔒 Encrypt</button>
+          <button data-action="rsa-decrypt">🔓 Decrypt</button>
+          <button data-action="rsa-clear">Clear</button>
+        </div>
+
+        <label>Result</label>
+        <textarea id="rsa-result" readonly></textarea>
+        <button class="copy-btn" data-copy="rsa-result">Copy Result</button>
+      </div>
+    </section>
+
+    <!-- Card: Caesar -->
+    <section class="card">
+      <header class="card-header" data-target="caesar-content">Caesar Cipher</header>
+      <div id="caesar-content" class="card-body collapsed">
+        <label>Text</label>
+        <textarea id="caesar-input"></textarea>
+        <label>Shift (1–25)</label>
+        <input id="caesar-shift" type="number" min="1" max="25" value="3" />
+        <div class="actions">
+          <button data-action="caesar-encrypt">🔒 Encrypt</button>
+          <button data-action="caesar-decrypt">🔓 Decrypt</button>
+          <button data-action="caesar-clear">Clear</button>
+        </div>
+        <label>Result</label>
+        <textarea id="caesar-result" readonly></textarea>
+        <button class="copy-btn" data-copy="caesar-result">Copy Result</button>
+      </div>
+    </section>
+
+    <!-- Card: Base64 -->
+    <section class="card">
+      <header class="card-header" data-target="base64-content">Base64 Encode / Decode</header>
+      <div id="base64-content" class="card-body collapsed">
+        <label>Text</label>
+        <textarea id="base64-input"></textarea>
+        <div class="actions">
+          <button data-action="base64-encode">🔒 Encode</button>
+          <button data-action="base64-decode">🔓 Decode</button>
+          <button data-action="base64-clear">Clear</button>
+        </div>
+        <label>Result</label>
+        <textarea id="base64-result" readonly></textarea>
+        <button class="copy-btn" data-copy="base64-result">Copy Result</button>
+      </div>
+    </section>
+
+    <!-- Card: Hash -->
+    <section class="card">
+      <header class="card-header" data-target="hash-content">Hash Generator</header>
+      <div id="hash-content" class="card-body collapsed">
+        <label>Text</label>
+        <textarea id="hash-input"></textarea>
+        <label>Algorithm</label>
+        <select id="hash-algorithm">
+          <option>SHA-256</option>
+          <option>SHA-512</option>
+          <option>MD5</option>
+          <option>SHA-1</option>
+        </select>
+        <div class="actions">
+          <button data-action="hash-generate">Generate</button>
+          <button data-action="hash-clear">Clear</button>
+        </div>
+        <label>Result</label>
+        <textarea id="hash-result" readonly></textarea>
+        <button class="copy-btn" data-copy="hash-result">Copy Result</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Made by Soniya Wakode</p>
+  </footer>
+
+  <!-- Toast container -->
+  <div id="toast-container"></div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
