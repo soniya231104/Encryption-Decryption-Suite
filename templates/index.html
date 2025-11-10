@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>🔐 Encryption & Decryption Suite (Flask)</title>
-  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
   <!-- Loading Screen -->
@@ -144,14 +144,5 @@
     setTimeout(() => loader.style.display = "none", 800);
   });
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((card, i) => {
-      card.style.animationDelay = `${i * 0.15}s`;
-    });
-  });
-</script>
-
 </body>
 </html>
