@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
+  <!-- Loading Screen -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
   <header>
     <h1>🔐 Encryption & Decryption Suite</h1>
   </header>
@@ -131,5 +136,22 @@
   <div id="toast-container"></div>
 
   <script src="/static/script.js"></script>
+  <script>
+  // Hide loader when page finishes loading
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    loader.classList.add("fadeOut");
+    setTimeout(() => loader.style.display = "none", 800);
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card, i) => {
+      card.style.animationDelay = `${i * 0.15}s`;
+    });
+  });
+</script>
+
 </body>
 </html>
