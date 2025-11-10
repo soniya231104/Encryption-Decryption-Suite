@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption & Decryption Suite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Encryption & Decryption Suite</h1>
+            <p>Secure your data with multiple encryption algorithms</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('aes')">AES Encryption</button>
+            <button class="tab-button" onclick="showTab('rsa')">RSA Encryption</button>
+            <button class="tab-button" onclick="showTab('caesar')">Caesar Cipher</button>
+            <button class="tab-button" onclick="showTab('base64')">Base64</button>
+            <button class="tab-button" onclick="showTab('hash')">Hash Generator</button>
+        </div>
+
+        <!-- AES Tab -->
+        <div id="aes" class="tab-content active">
+            <h2>AES Encryption (Advanced Encryption Standard)</h2>
+            <div class="input-group">
+                <label for="aes-input">Text to encrypt/decrypt:</label>
+                <textarea id="aes-input" placeholder="Enter your text here..."></textarea>
+            </div>
+            <div class="input-group">
+                <label for="aes-password">Password:</label>
+                <input type="password" id="aes-password" placeholder="Enter password...">
+            </div>
+            <div class="button-group">
+                <button onclick="aesEncrypt()">🔒 Encrypt</button>
+                <button onclick="aesDecrypt()">🔓 Decrypt</button>
+                <button onclick="clearAES()">Clear</button>
+            </div>
+            <div class="result">
+                <label>Result:</label>
+                <textarea id="aes-result" readonly></textarea>
+                <button onclick="copyToClipboard('aes-result')">Copy</button>
+            </div>
+        </div>
+
+        <!-- RSA Tab -->
+        <div id="rsa" class="tab-content">
+            <h2>RSA Encryption (Rivest-Shamir-Adleman)</h2>
+            <div class="key-generation">
+                <button onclick="generateRSAKeys()">Generate RSA Key Pair</button>
+                <div class="key-display">
+                    <label>Public Key:</label>
+                    <textarea id="rsa-public-key" readonly></textarea>
+                    <label>Private Key:</label>
+                    <textarea id="rsa-private-key" readonly></textarea>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="rsa-input">Text to encrypt/decrypt:</label>
+                <textarea id="rsa-input" placeholder="Enter your text here..."></textarea>
+            </div>
+            <div class="button-group">
+                <button onclick="rsaEncrypt()">🔒 Encrypt with Public Key</button>
+                <button onclick="rsaDecrypt()">🔓 Decrypt with Private Key</button>
+                <button onclick="clearRSA()">Clear</button>
+            </div>
+            <div class="result">
+                <label>Result:</label>
+                <textarea id="rsa-result" readonly></textarea>
+                <button onclick="copyToClipboard('rsa-result')">Copy</button>
+            </div>
+        </div>
+
+        <!-- Caesar Cipher Tab -->
+        <div id="caesar" class="tab-content">
+            <h2>Caesar Cipher (Shift Cipher)</h2>
+            <div class="input-group">
+                <label for="caesar-input">Text to encrypt/decrypt:</label>
+                <textarea id="caesar-input" placeholder="Enter your text here..."></textarea>
+            </div>
+            <div class="input-group">
+                <label for="caesar-shift">Shift (1-25):</label>
+                <input type="number" id="caesar-shift" min="1" max="25" value="3">
+            </div>
+            <div class="button-group">
+                <button onclick="caesarEncrypt()">🔒 Encrypt</button>
+                <button onclick="caesarDecrypt()">🔓 Decrypt</button>
+                <button onclick="clearCaesar()">Clear</button>
+            </div>
+            <div class="result">
+                <label>Result:</label>
+                <textarea id="caesar-result" readonly></textarea>
+                <button onclick="copyToClipboard('caesar-result')">Copy</button>
+            </div>
+        </div>
+
+        <!-- Base64 Tab -->
+        <div id="base64" class="tab-content">
+            <h2>Base64 Encoding/Decoding</h2>
+            <div class="input-group">
+                <label for="base64-input">Text to encode/decode:</label>
+                <textarea id="base64-input" placeholder="Enter your text here..."></textarea>
+            </div>
+            <div class="button-group">
+                <button onclick="base64Encode()">🔒 Encode</button>
+                <button onclick="base64Decode()">🔓 Decode</button>
+                <button onclick="clearBase64()">Clear</button>
+            </div>
+            <div class="result">
+                <label>Result:</label>
+                <textarea id="base64-result" readonly></textarea>
+                <button onclick="copyToClipboard('base64-result')">Copy</button>
+            </div>
+        </div>
+
+        <!-- Hash Tab -->
+        <div id="hash" class="tab-content">
+            <h2>Hash Generator</h2>
+            <div class="input-group">
+                <label for="hash-input">Text to hash:</label>
+                <textarea id="hash-input" placeholder="Enter your text here..."></textarea>
+            </div>
+            <div class="hash-options">
+                <label>Algorithm:</label>
+                <select id="hash-algorithm">
+                    <option value="SHA-256">SHA-256</option>
+                    <option value="SHA-512">SHA-512</option>
+                    <option value="MD5">MD5</option>
+                    <option value="SHA-1">SHA-1</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button onclick="generateHash()">Generate Hash</button>
+                <button onclick="clearHash()">Clear</button>
+            </div>
+            <div class="result">
+                <label>Hash Result:</label>
+                <textarea id="hash-result" readonly></textarea>
+                <button onclick="copyToClipboard('hash-result')">Copy</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with ❤️ for secure communication | All encryption happens locally in your browser</p>
+        </footer>
+    </div>
+
+    <script src="crypto.js"></script>
+</body>
+</html>

@@ -1,8 +1,7 @@
-
 # 🛡️ Encryption & Decryption Suite (Python Flask Web App)
 
 A modern **Python-based Flask web application** that lets you encrypt and decrypt text using multiple algorithms — **AES, RSA, Caesar Cipher, Base64, and Hash generators.**
-Built with a **red-white gradient UI**, responsive layout, **toast notifications**, and a fully functional **Python backend** ready for **online deployment**.
+Built with a responsive layout, **toast notifications**, and a fully functional **Python backend**.
 
 ---
 
@@ -12,9 +11,7 @@ Built with a **red-white gradient UI**, responsive layout, **toast notifications
 - 🔢 **Caesar Cipher** for basic shift encryption
 - 🧬 **Base64 Encoding/Decoding**
 - 🧮 **Hash Generator** (MD5, SHA-1, SHA-256, SHA-512)
-- 🌈 **Red-white gradient UI** with collapsible panels
 - 💬 **Interactive Toast Notifications**
-- 🌍 **Ready for online hosting** using Render, PythonAnywhere, or Heroku
 
 ---
 
@@ -23,9 +20,9 @@ Built with a **red-white gradient UI**, responsive layout, **toast notifications
 |-------|-------------|
 | Programming Language | **Python 3.x** |
 | Backend Framework | **Flask** |
-| Frontend | HTML, CSS (red-white gradient), JavaScript |
+| Frontend | HTML, CSS , JavaScript |
 | Cryptography | Python’s `cryptography` and `hashlib` libraries |
-| Deployment | Render / PythonAnywhere / Heroku |
+| Deployment | Render |
 
 ---
 
@@ -87,8 +84,8 @@ Your Flask web app will be live with a public URL like:
 
 ## 🧑‍💻 Author
 **Soniya Wakode**  
-📧 [Your Email Here]  
-🔗 [LinkedIn / GitHub Profile Link]
+📧 [soniya.231104@gmail.com]  
+🔗 [https://github.com/soniya231104]
 
 ---
 
