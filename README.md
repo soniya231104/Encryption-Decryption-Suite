@@ -1,5 +1,7 @@
 # 🛡️ Encryption & Decryption Suite (Python Flask Web App)
 
+🔗 **Live Demo:** [https://encryption-decryption-suite.onrender.com](https://encryption-decryption-suite.onrender.com)
+
 A modern **Python-based Flask web application** that lets you encrypt and decrypt text using multiple algorithms — **AES, RSA, Caesar Cipher, Base64, and Hash generators.**
 Built with a responsive layout, **toast notifications**, and a fully functional **Python backend**.
 
